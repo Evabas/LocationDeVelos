@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vélos</title>
+    <link rel="stylesheet" href="velos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo"><img src="images/logo_bicloo.gif" alt="Logo Bicloo">
+            <p>Site factice</p>
+        </div>
+
+        <div id="slider">
+            <ul>
+                <li class="mySlides"><img src="images/1.jpg" alt="vélos en stationnement" />
+                    <p>Bicloo est l’offre de vélos en libre-service de Nantes métropole. Profitez d’un parc de 1000 vélos et de 123 stations. Déplacez-vous dans la ville en toute liberté!</p>
+                </li>
+                <li class="mySlides"><img src="images/2.jpg" alt="vue aérienne de Nantes" />
+                    <p>Choisissez votre station sur la carte (îcones vélos). Lors de votre première connection, indiquez votre nom et votre prénom puis cliquez sur réserver.</p>
+                </li>
+                <li class="mySlides"><img src="images/3.jpg" alt="vélo noir" />
+                    <p>Votre choix de station apparaît dans l'encadré orange. Pour confirmer ce choix, signez puis cliquez sur valider.</p>
+                </li>
+                <li class="mySlides"><img src="images/4.jpg" alt="vue aérienne de Nantes" />
+                    <p>Votre vélo sera réservé pendant 20 minutes.</p>
+                </li>
+            </ul>
+
+            <a id="prevButton"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></a>
+            <a id="nextButton"><i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></a>
+            <div id="div">
+                <button id="playButton" type="button" class="btn btn-default btn-xs">
+              <span><i class="fas fa-play-circle fa-2x"></i></span>
+            </button>
+                <button id="pauseButton" type="button" class="btn btn-default btn-xs">
+                    <span><i class="fas fa-pause-circle fa-2x"></i></span>
+            </button>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+    <section>
+        <div id="carte">
+            <div id="maCarte"></div>
+            <div id="panFor">
+                <aside id="panneauInfo"></aside>
+                <aside id="formulaire">
+                    <form>
+                        <div>
+                            <label for="nom">Nom :</label>
+                            <input type="text" name="nom" id="nom" value="">
+                        </div>
+                        <div>
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" name="prenom" id="prenom" value="">
+                        </div>
+                    </form>
+                    <br>
+                    <button id="reservation" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Choisissez une station avant de réserver">Réservation</button>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <section id="section3">
+        <aside id="panneauInfo2">
+            <h2>Réservation</h2>
+            <label for="adresse">Adresse :</label>
+            <input name="adresse" id="adresse" value="">
+            <label for="statut">Statut:</label>
+            <input name="statut" id="statut" value="">
+            <label for="velosDisp">Vélos disponibles :</label>
+            <input name="velosDisp" id="velosDisp" value="">
+
+        </aside>
+        <aside id="signature">
+            <h2>Signature</h2>
+            <canvas id="canvas" width="490" height="220">Votre navigateur ne supporte pas canvas</canvas>
+            <br>
+            <input id="validationCanvas" class="btn btn-success" type="submit" value="Valider" data-toggle="tooltip" data-placement="top" title="Signez avant de valider">
+            <input id="effacerCanvas" class="btn btn-warning" type="reset" value="Effacer">
+            <input id="annulerCanvas" class="btn btn-danger" type="reset" value="Annuler">
+        </aside>
+        <br>
+        <div id="compteARebours">
+            Votre réservation expire dans <input name="minutes" id="minutes" value=""> minutes et <input name="secondes" id="secondes" value=""> secondes.
+            <br>
+            <button id="annulation" class="btn btn-danger">Annulation</button>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="velos_slider.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script src="velos_carte.js"></script>
+    <script src="velos_reservation.js"></script>
+    <script src="velos_canvas.js"></script>
+    <script src="velos_timer.js"></script>
+    <script src="velos_storage.js"></script>
+</body>
+
+</html>

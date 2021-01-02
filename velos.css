@@ -1,0 +1,335 @@
+    #slider {
+        width: 100%;
+        max-height: 600px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    #slider ul {
+        width: 400%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    
+    #slider li {
+        float: left;
+        width: 100%;
+    }
+    
+    #slider img {
+        width: 25%;
+        height: auto;
+        float: left;
+    }
+    
+    ul p {
+        position: absolute;
+        top: 5%;
+        left: 45%;
+        z-index: 2;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        font-size: 1.8em;
+        padding: 1em;
+        margin: 3em;
+        border: solid black 8px;
+        border-radius: 20px;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+    
+    .logo p {
+        text-align: center;
+    }
+    
+    #prevButton,
+    #nextButton {
+        position: absolute;
+        z-index: 2;
+        top: 45%;
+        color: white;
+        background-color: orangered;
+        padding: 10px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    
+    #prevButton {
+        left: 0;
+        border-radius: 0 50% 50% 0;
+    }
+    
+    #nextButton {
+        right: 0;
+        border-radius: 50% 0 0 50%;
+    }
+    
+    #playButton,
+    #pauseButton {
+        position: absolute;
+        z-index: 2;
+        left: 2%;
+        background-color: orangered;
+        color: white;
+        padding: 10px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    
+    #playButton {
+        bottom: 2%;
+        padding: 5px;
+    }
+    
+    #pauseButton {
+        bottom: 12%;
+        padding: 5px;
+    }
+    
+    #carte {
+        position: relative;
+        background-color: orangered;
+        opacity: 0.8;
+        padding: 2% 0;
+    }
+    
+    #maCarte {
+        width: 60%;
+        height: 600px;
+        margin-left: 5%;
+        border: solid black 8px;
+        position: relative;
+    }
+    
+    #panFor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    #panneauInfo {
+        width: 20%;
+        height: 250px;
+        border: solid black 8px;
+        border-radius: 20px;
+        position: absolute;
+        top: 10%;
+        right: 7%;
+        background-color: white;
+        padding: 1em;
+        margin: auto;
+    }
+    
+    #panneauInfo2 {
+        width: 40%;
+        height: 250px;
+        border: solid black 8px;
+        border-radius: 20px;
+        position: relative;
+        background-color: orangered;
+        opacity: 0.8;
+        padding: 1em;
+        margin: 2% auto;
+    }
+    
+    #panneauInfo2 input {
+        background-color: orangered;
+        border: none;
+        color: white;
+        text-align: center;
+        font: 1em sans-serif;
+        width: 100%;
+    }
+    
+    #panneauInfo2 label,
+    h2 {
+        color: white;
+        font-weight: bold;
+    }
+    
+    #formulaire {
+        width: 20%;
+        height: 250px;
+        border: solid black 8px;
+        border-radius: 20px;
+        position: absolute;
+        top: 55%;
+        right: 7%;
+        background-color: white;
+        padding: 1em;
+        font-weight: bold;
+    }
+    
+    #formulaire input {
+        font: 1em sans-serif;
+        width: 100%;
+        border: 1px solid grey;
+        padding: 5px;
+    }
+    
+    #formulaire button {
+        width: 100%;
+    }
+    
+    #section3 {
+        text-align: center;
+    }
+    
+    #signature {
+        display: none;
+        margin-bottom: 2%
+    }
+    
+    #annulation {
+        background-color: orangered;
+        opacity: 0.8;
+    }
+    
+    #canvas {
+        border: solid black 8px;
+        margin: auto;
+    }
+    
+    #compteARebours {
+        font-size: 2em;
+        text-align: center;
+        border: solid black 8px;
+        border-radius: 20px;
+        margin: 0% 20% 2% 20%;
+        padding: 20px;
+        display: none;
+    }
+    
+    #minutes,
+    #secondes {
+        width: 1.2em;
+        border: none;
+        background-color: white;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    /*------------------------------------@media------------------------------*/
+    
+    @media all and (max-width: 1100px) {
+        ul p {
+            position: absolute;
+            top: 25%;
+            left: 0%;
+            z-index: 2;
+            font-size: 1.2em;
+            padding: 1em;
+            margin: 0.5em 2em;
+            border: solid black 2px;
+            border-radius: 20px;
+        }
+        #prevButton,
+        #nextButton {
+            padding: 3px;
+        }
+        #pauseButton,
+        #playButton {
+            font-size: 0.5em;
+        }
+        #maCarte {
+            width: 90%;
+        }
+        #panFor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #panneauInfo {
+            position: relative;
+            left: 2.5%;
+            width: 70%;
+            margin-top: 2%;
+        }
+        #formulaire {
+            position: relative;
+            left: 2.5%;
+            width: 70%;
+            margin-top: 10px;
+        }
+        #panneauInfo2 {
+            position: relative;
+            left: 2.5%;
+            width: 70%;
+        }
+        #minutes,
+        #secondes {
+            width: 2em;
+            font-size: 0.8em;
+        }
+    }
+    
+    @media all and (max-width: 480px) {
+        ul p {
+            position: absolute;
+            top: 12%;
+            left: 0%;
+            z-index: 2;
+            font-size: 1em;
+            padding: 1em;
+            margin: 0.5em 2em;
+            border: solid black 2px;
+            border-radius: 20px;
+        }
+        #prevButton,
+        #nextButton {
+            padding: 5px;
+            font-size: 0.5em;
+        }
+        #pauseButton {
+            font-size: 0.3em;
+        }
+        #playButton {
+            font-size: 0.3em;
+        }
+        #maCarte {
+            width: 90%;
+        }
+        #panFor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #panneauInfo {
+            position: relative;
+            left: 2.5%;
+            width: 70%;
+            margin-top: 2%;
+            font-size: 1em;
+        }
+        #formulaire {
+            position: relative;
+            left: 2.5%;
+            width: 70%;
+            margin-top: 10px;
+        }
+        #panneauInfo2 {
+            position: relative;
+            left: 2.5%;
+            width: 70%;
+            font-size: 1em;
+        }
+        #canvas {
+            width: 320px;
+        }
+        #compteARebours {
+            border: solid black 8px;
+            margin-top: 30px;
+            font-size: 1em;
+        }
+        #minutes,
+        #secondes {
+            width: 1.5em;
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
